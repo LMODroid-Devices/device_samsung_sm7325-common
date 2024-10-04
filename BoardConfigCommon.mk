@@ -96,7 +96,7 @@ BOARD_ROOT_EXTRA_FOLDERS += \
     efs
 
 # File systems
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+#USERDATAIMAGE := f2fs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE   := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE   := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE  := ext4
@@ -177,9 +177,11 @@ TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_samsung_sm7325
 # HIDL manifests
 DEVICE_MANIFEST_SKUS := yupik
 DEVICE_MANIFEST_YUPIK_FILES += $(COMMON_PATH)/configs/manifest_yupik.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/configs/framework_compatibility_matrix.xml \
+    hardware/samsung/vintf/samsung_framework_compatibility_matrix.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     vendor/lmodroid/config/device_framework_matrix.xml
 
 # QCOM
